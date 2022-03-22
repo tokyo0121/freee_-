@@ -1,0 +1,140 @@
+body{
+  background-color: #fff;
+  margin: 0;
+}
+
+.content{
+  margin: 30px auto;
+  width: 650px;
+  background: #ddd;
+  padding: 30px;
+}
+
+p{
+  margin-top: 0px;
+}
+
+.main-contents{
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.main-contents li{
+  float: left;
+}
+
+.main-contents li:last-child{
+  margin: 0;
+}
+
+/* タイトル */
+h1{
+  color: #fff;
+  font-size: 30px;
+  background: #000;
+  opacity: 0.5;
+  height: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 10px 10px 5px 20px;
+}
+
+/* 年月日表示 */
+#today{
+  text-align: center;
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 60px;
+  border-bottom: 3px double #000;
+  padding-bottom: 3px;
+}
+/* アナログ時計 */
+.clock{
+  border-radius: 50%;
+  border: 3px solid #000;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.7);
+  position: relative;
+}
+
+.lineHour{
+  width: 5px;
+  height: 75px;
+  background: #000;
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 2px);
+  transform-origin: bottom;
+}
+
+.lineMin{
+  width: 2px;
+  height: 95px;
+  background: #000;
+  position: absolute;
+  top: calc(50% - 95px);
+  left: calc(50% - 1px);
+  transform-origin: bottom;
+}
+
+.lineSec{
+  width: 1px;
+  height: 100px;
+  background: #000;
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 0.5px);
+  transform-origin: bottom;
+}
+/* 出勤時間・退勤時間 */
+.TimeContents{
+  overflow: hidden;
+  margin: 10px auto;
+  padding: 20px 0 0 0;
+  list-style: none;
+  width: 400px;
+}
+
+.TimeContents li{
+  float: left;
+  padding-left: 25px;
+}
+
+.TimeContents li:last-child{
+  margin: 0;
+}
+/* 時間表示 */
+.workTime{
+  margin-left: 25px;
+}
+
+#workTime{
+  padding-left: 25px;
+}
+
+/* ボタンレイアウト */
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 15px;
+
+  background: #6E6D70;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+  color: #DFDEDF;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}

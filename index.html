@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>勤怠アプリ</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <script src="main.js" defer>
+
+    </script>
+  </head>
+  <body>
+    <h1>2022年3月勤怠表</h1>
+      <div class="content">
+        <!-- <div class="table">
+          <table>
+            <thead>
+              <tr>
+                <th>日付</th>
+                <th>出勤時間</th>
+                <th>退勤時間</th>
+                <th>休憩時間</th>
+                <th>労働時間</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>3/1(Tue)</td>
+                <td><input type="time" min="07:00:00" max="11:00:00" id="starttime" onchange="calElapseTime()"></td>
+                <td><input type="time" min="16:00:00" max="20:00:00" id="endtime" onchange="calElapseTime()"></td>
+                <td><input type="time"></td>
+                <td><input type="number" value="starttime - endtime"> H</td>
+              </tr>
+            </tbody>
+          </table> -->
+
+          <!-- 年月日を表示する -->
+          <p id="today"></p>
+
+          <!-- アナログ時計を表示する -->
+          <ul class="main-contents">
+            <li>
+              <div class="clock">
+                <div class="lineHour"></div>
+                <div class="lineMin"></div>
+                <div class="lineSec"></div>
+              </div>
+            </li>
+
+            <li>
+
+              <ul class="TimeContents">
+                <li>
+                  <div class="TimeCheck">
+                    <!-- 出勤時間入力 -->
+                    <input type="button" value="出勤" onclick="starttime()" class="button">
+                    <p>出勤時間：<span id="startTime">出勤前</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="TimeCheck">
+                    <!-- 退勤時間入力 -->
+                    <input type="button" value="退勤" onclick="endtime()" class="button">
+                    <p>退勤時間：<span id="endTime">退勤前</span></p>
+                  </div>
+                </li>
+              </ul>
+
+              <input type="button" onclick="worktime()" value="労働時間" class="workTime button">
+              <p id="workTime"></p>
+            </li>
+          </ul>
+
+        </div>
+
+
+    <!-- </div> -->
+
+  </body>
+</html>
