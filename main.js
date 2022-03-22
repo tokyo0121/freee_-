@@ -34,7 +34,7 @@ function starttime(){
   let minutes = date.getMinutes();
   let seconds = date.getSeconds();
 
-  let label = `${hour}:${minutes}:${seconds}`;
+  let label = `${hour}:${minutes}`;
 
   document.querySelector('#startTime').innerHTML = `${label}`;
 
@@ -47,19 +47,50 @@ function endtime(){
   let minutes = date.getMinutes();
   let seconds = date.getSeconds();
 
-  let label = `${hour}:${minutes}:${seconds}`;
+  let label = `${hour}:${minutes}`;
 
   document.querySelector('#endTime').innerHTML = `${label}`;
+
+  //勤務時間
+  let startLabel = document.querySelector('#startTime').innerHTML;
+  let endLabel = document.querySelector('#endTime').innerHTML;
+
+  let startTimeLabel = startLabel.split(':');
+  let startMin = startTimeLabel[1];
+  let startHour = startTimeLabel[0];
+
+  let endTimeLabel = endLabel.split(':');
+  let endMin = endTimeLabel[1];
+  let endHour = endTimeLabel[0];
+
+  let workTimeMin = parseInt(endMin) - parseInt(startMin);
+  let workTimeHour = parseInt(endHour) - parseInt(startHour);
+  let workMin = workTimeMin;
+  let workHour = workTimeHour;
+  if (workTimeMin < 0) {
+    workMin = 60 + workTimeMin;
+    workHour = workHour - 1;
+  } else{ }
+
+  document.querySelector('#workTime').innerHTML = `${workHour}:${workMin}`;
+
+  // console.log(`${startMin}`);
+  // console.log(`${startHour}`);
+  // console.log(`${endMin}`);
+  // console.log(`${endHour}`);
+  // console.log(`${workMin}`);
+  // console.log(`${workHour}`);
+
 }
 
 // 労働時間を計測する
-function worktime(){
-  const startLabel = document.querySelector('#startTime');
-  const endLabel = document.querySelector('#endTime');
-  const workTimeSec = endLabel - startLabel;
-  const workTimeHour = workTimeSec / (60 * 60 * 1000);
-
-  console.log(`${workTimeHour}`);
-
-  document.querySelector('#workTime').innerHTML = `${workTimeHour}`;
-}
+// function worktime(){
+//   const startLabel = document.querySelector('#startTime');
+//   const endLabel = document.querySelector('#endTime');
+//   const workTimeSec = endLabel - startLabel;
+//   const workTimeHour = workTimeSec / (60 * 60 * 1000);
+//
+//   console.log(`${workTimeHour}`);
+//
+//   document.querySelector('#workTime').innerHTML = `${workTimeHour}`;
+// }
